@@ -1,0 +1,74 @@
+version: '3'
+services:
+
+  #WEB Boxbilling 
+  appboxbilling:
+    build:
+      context: ./boxbilling
+      dockerfile: Dockerfile
+    image: boxbilling/web
+    container_name: web-boxbilling
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    command: php -S 0.0.0.0:9000 -t public
+    working_dir: /var/www
+    ports:
+        - 8004:9000
+    volumes:
+      - ./boxbilling:/var/www
+      - ./boxbilling/docker-config/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - app-network
+
+  # WEB Niagahoster
+  appniagahoster:
+    container_name: web-niagahoster
+    build:
+      context: ./niagahoster
+      dockerfile: Dockerfile
+    image: "niagahoster/web"
+    working_dir: /var/www
+    command: php -S 0.0.0.0:8080 -t public
+    environment:
+      docker: "true"
+    ports:
+      - "80:8080"
+    volumes:
+      - ./niagahoster:/var/www
+      - ./niagahoster/logs:/var/www/logs
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  #MySQL Service
+  db:
+    image: mysql:5
+    container_name: db-service
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: niagahoster
+      MYSQL_ROOT_PASSWORD: root
+      SERVICE_NAME: mysql
+      SERVICE_TAGS: dev
+    volumes:
+      - ./database/my.cnf:/etc/mysql/my.cnf
+      - ./database/init:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+
+#Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local

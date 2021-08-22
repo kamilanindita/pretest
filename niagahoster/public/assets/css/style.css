@@ -1,0 +1,242 @@
+@font-face {
+  font-family: "Montserrat Bold";
+  src: url('../fonts/montserrat/Montserrat-Bold.otf');
+}
+
+@font-face {
+  font-family: "Montserrat Hairline";
+  src: url('../fonts/montserrat/Montserrat-Hairline.otf');
+}
+
+@font-face {
+  font-family: "Montserrat Light";
+  src: url('../fonts/montserrat/Montserrat-Light.otf');
+}
+
+@font-face {
+  font-family: "Montserrat Regular";
+  src: url('../fonts/montserrat/Montserrat-Regular.otf');
+}
+
+.montserrat-bold {
+  font-family: "Montserrat Bold";
+  font-size: 2em;
+}
+.montserrat-hairline {
+  font-family: "Montserrat Hairline";
+  font-size: 14px;
+}
+
+.montserrat-light-small {
+  font-family: "Montserrat Light";
+  font-size: 15px;
+}
+
+.montserrat-light {
+  font-family: "Montserrat Light";
+  line-height: 1em;
+  font-size: 1.9em;
+}
+
+.montserrat-light-small {
+  font-family: "Montserrat Light";
+}
+
+.montserrat-regular {
+  font-family: "Montserrat Regular";
+}
+
+
+.btn-border-radius {
+  border-radius: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.bank-icon {
+  max-width: 100px;
+  max-height: 40px;
+  margin-top: 5px;
+}
+
+.border-input {
+  border-radius: 20px;
+}
+
+.btn-berlangganan {
+  background-color: #3b8af2;
+  color: #fff;
+}
+
+.btn-berlangganan:hover {
+  background-color: #fff;
+  border-color: #3b8af2;
+  color: #111;
+}
+
+.btn-personal-service {
+  background-color: #3b8af2;
+  border-color:#fff;
+  color:#fff;
+}
+
+.btn-personal-service:hover {
+  background-color: #fff;
+  border-color:#3b8af2;
+  color:#111 ;
+}
+
+.btn-service:hover {
+  background-color: #3b8af2;
+  border-color: #fff;
+}
+
+.color-footer {
+  color: darkgray;
+}
+
+.list-footer a {
+  color:darkgray;
+  text-decoration: none
+}
+
+.list-footer a:hover {
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: rgb(0, 0, 0);
+}
+
+.v-divider{
+  margin-left: 5%;
+  margin-right: 5%;
+  border-left: 1px solid #fff;
+  height: 200px;
+}
+
+.h-divider{
+  margin-bottom:5px;
+  width:100px;
+  border-top:4px solid rgb(214, 214, 214);
+ }
+
+#jumbotron {
+    width: 100%;
+    height: 75vh;
+    background: url("../img/jumbotron-bg.jpg") top left;
+    background-size: cover;
+    position: relative;
+  }
+  
+  #jumbotron:before {
+    content: "";
+    background: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  #jumbotron .container {
+    position: relative;
+  }
+  
+  #jumbotron h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #222222;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #jumbotron h1 span {
+    color: #106eea;
+  }
+  
+  #jumbotron h2 {
+    color: #555555;
+    margin: 5px 0 30px 0;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  
+  #jumbotron .btn-get-started {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 4px;
+    transition: 0.5s;
+    color: #fff;
+    background: #106eea;
+  }
+  
+  #jumbotron .btn-get-started:hover {
+    background: #247cf0;
+  }
+  
+  #jumbotron .btn-watch-video {
+    font-size: 16px;
+    transition: 0.5s;
+    margin-left: 25px;
+    color: #222222;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  
+  #jumbotron .btn-watch-video i {
+    color: #106eea;
+    font-size: 32px;
+    transition: 0.3s;
+    line-height: 0;
+    margin-right: 8px;
+  }
+  
+  #jumbotron .btn-watch-video:hover {
+    color: #106eea;
+  }
+  
+  #jumbotron .btn-watch-video:hover i {
+    color: #3b8af2;
+  }
+  
+  @media (min-width: 1024px) {
+    #jumbotron {
+      background-attachment: fixed;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    #jumbotron {
+      height: 100vh;
+    }
+    #jumbotron h1 {
+      font-size: 28px;
+      line-height: 36px;
+    }
+    #jumbotron h2 {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 30px;
+    }
+    #jumbotron .btn-get-started, #jumbotron .btn-watch-video {
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-height: 500px) {
+    #jumbotron {
+      height: 120vh;
+    }
+  }
+  
+  
